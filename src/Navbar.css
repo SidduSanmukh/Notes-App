@@ -1,0 +1,90 @@
+/* src/Navbar.css */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background-color: #24292e; /* Dark gray-blue background */
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-logo {
+  font-size: 1.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.logo-highlight {
+  color: #4caf50; /* Green highlight */
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Buttons shared */
+.navbar-menu button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.nav-btn:hover {
+  background-color: #0056b3;
+}
+
+.nav-btn.active {
+  background-color: #0056b3;
+}
+
+.dark-mode-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+.dark-mode-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Dark mode styles */
+.navbar.dark {
+  background-color: #121212;
+}
+
+.navbar.dark .logo-highlight {
+  color: #bb86fc;
+}
+
+.navbar.dark .nav-btn {
+  background-color: #3a3a3a;
+}
+
+.navbar.dark .nav-btn:hover {
+  background-color: #505050;
+}
+
+.navbar.dark .dark-mode-btn {
+  background-color: #444;
+}
+
+.navbar.dark .dark-mode-btn:hover {
+  background-color: #555;
+}

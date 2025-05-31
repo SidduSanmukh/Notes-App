@@ -1,0 +1,391 @@
+/* App.css */
+/* Define light mode styles as default */
+:root {
+  --background-color: #f9f9f9;
+  --text-color: #333;
+  --button-bg-color: #4caf50;
+  --button-hover-bg-color: #45a049;
+  --note-card-bg-color: #fff;
+  --note-header-bg-color: #f4f4f4;
+  --priority-low-bg: #d3ffd3;
+  --priority-medium-bg: #fff6b3;
+  --priority-high-bg: #ffcccc;
+}
+
+.App {
+  font-family: "Arial", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px; /* Adjust content margin to avoid overlap with navbar */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  height: 88.6vh;
+}
+
+h1 {
+  color: var(--text-color);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.theme-toggle-btn {
+  background-color: var(--button-bg-color);
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+.view-notes-btn {
+  margin-left: 10px;
+  background-color: #2196f3;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.view-notes-btn:hover {
+  background-color: #1976d2;
+}
+
+/* Wrapper for left and right containers */
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 80px;
+  width: 100%;
+  overflow: hidden;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* Form container - left side */
+.form-container {
+  flex: 1;
+  background-color: var(--note-card-bg-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  min-width: 400px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  position: relative;
+  height: 100%;
+}
+
+/* Input fields */
+input,
+select,
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 94%;
+}
+
+textarea {
+  height: 100px;
+}
+
+button {
+  background-color: var(--button-bg-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+/* Notes list container - right side */
+.notes-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  padding-right: 10px;
+  width: 61%;
+  height: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: var(--note-card-bg-color);
+  border-radius: 8px;
+  box-sizing: border-box;
+  overflow: auto;
+  margin-top: 7%;
+}
+
+/* Notes list with scrolling enabled */
+.notes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Note card styles */
+.note-card {
+  background-color: var(--note-card-bg-color);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  flex-shrink: 0;
+  color: var(--text-color);
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.priority {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.priority.low {
+  background-color: var(--priority-low-bg);
+  color: green;
+}
+
+.priority.medium {
+  background-color: var(--priority-medium-bg);
+  color: orange;
+}
+
+.priority.high {
+  background-color: var(--priority-high-bg);
+  color: red;
+}
+
+/* Dark mode styles */
+.App.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.App.dark .form-container {
+  background-color: #2c2c2c;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.App.dark .theme-toggle-btn {
+  background-color: #6200ea;
+}
+
+.App.dark .theme-toggle-btn:hover {
+  background-color: #3700b3;
+}
+
+.App.dark .notes-list-container {
+  background-color: #333;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.App.dark .note-card {
+  background-color: #444;
+  color: #fff;
+}
+
+.App.dark .note-header {
+  background-color: #555;
+}
+
+.App.dark .note-header h3 {
+  color: white;
+}
+
+.App.dark .priority.low {
+  background-color: #006400;
+  color: white;
+}
+
+.App.dark .priority.medium {
+  background-color: #f4a300;
+  color: white;
+}
+
+.App.dark .priority.high {
+  background-color: #9e0000;
+  color: white;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.App.dark h2 {
+  color: #ffffff;
+}
+
+/* ============ EditNote Page Styles ============ */
+
+.edit-note-container {
+  max-width: 600px;
+  margin: 100px auto 40px auto;
+  padding: 30px 20px;
+  background-color: var(--note-card-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+}
+
+.App.dark .edit-note-container {
+  background-color: #2c2c2c;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.edit-note-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.edit-note-container input,
+.edit-note-container textarea,
+.edit-note-container select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.App.dark .edit-note-container input,
+.App.dark .edit-note-container textarea,
+.App.dark .edit-note-container select {
+  background-color: #444;
+  color: white;
+  border: 1px solid #666;
+}
+
+.edit-note-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.edit-note-buttons button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+}
+
+.edit-note-buttons .save-btn {
+  background-color: var(--button-bg-color);
+  color: white;
+}
+
+.edit-note-buttons .save-btn:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+.edit-note-buttons .cancel-btn {
+  background-color: #888;
+  color: white;
+}
+
+.edit-note-buttons .cancel-btn:hover {
+  background-color: #666;
+}
+
+.App.dark .edit-note-buttons .cancel-btn {
+  background-color: #555;
+}
+
+.App.dark .edit-note-buttons .cancel-btn:hover {
+  background-color: #444;
+}
+
+/* Centered Write Note page */
+.write-note-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  padding: 40px;
+}
+
+.notes-list-container.full-page {
+  margin-top: 100px;
+  padding: 20px;
+  height: 80vh;
+}
+/* Add the following to App.css */
+.note-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.note-actions button {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  margin: 0 5px;
+}
+
+.edit-btn {
+  background-color: #4caf50; /* Green */
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #45a049;
+}
+
+.delete-btn {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}

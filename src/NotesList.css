@@ -1,0 +1,191 @@
+/* NotesList.css */
+
+/* Container for the notes list */
+.notes-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
+  padding: 20px;
+  background-color: var(--note-card-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  height: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: auto;
+  margin-top: 7%;
+}
+
+/* Header for the notes list */
+h2 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.App.dark h2 {
+  color: #ffffff;
+}
+
+/* The list of notes (ul) */
+.notes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each note card */
+.note-card {
+  background-color: var(--note-card-bg-color);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  flex-shrink: 0;
+  color: var(--text-color);
+  position: relative;
+}
+
+/* Note header (title, priority, etc.) */
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.priority {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Priority levels */
+.priority.low {
+  background-color: var(--priority-low-bg);
+  color: green;
+}
+
+.priority.medium {
+  background-color: var(--priority-medium-bg);
+  color: orange;
+}
+
+.priority.high {
+  background-color: var(--priority-high-bg);
+  color: red;
+}
+
+/* Action buttons (Edit, Delete) */
+#DeleteButtonsss {
+  background-color: red;
+}
+.note-card button {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 10px;
+  border: none;
+}
+
+/* Edit and Delete buttons */
+.note-card .edit-btn {
+  /* background-color: #4caf50; */
+  color: white;
+  margin-right: 10px;
+}
+
+.note-card .edit-btn:hover {
+  background-color: #45a049;
+}
+
+.note-card .delete-btn {
+  background-color: #e53935;
+  color: white;
+}
+
+.note-card .delete-btn:hover {
+  background-color: #c62828;
+}
+
+/* Hover effect for note card */
+.note-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode styles */
+.App.dark .note-card {
+  background-color: #444;
+  color: #fff;
+}
+
+.App.dark .note-header {
+  background-color: #555;
+}
+
+.App.dark .note-header h3 {
+  color: white;
+}
+
+.App.dark .priority.low {
+  background-color: #006400;
+  color: white;
+}
+
+.App.dark .priority.medium {
+  background-color: #f4a300;
+  color: white;
+}
+
+.App.dark .priority.high {
+  background-color: #9e0000;
+  color: white;
+}
+
+.App.dark .note-card .edit-btn {
+  background-color: #6200ea;
+}
+
+.App.dark .note-card .edit-btn:hover {
+  background-color: #3700b3;
+}
+
+.App.dark .note-card .delete-btn {
+  background-color: #9e0000;
+}
+
+.App.dark .note-card .delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .notes-list-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .notes-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .note-card {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+  }
+}
